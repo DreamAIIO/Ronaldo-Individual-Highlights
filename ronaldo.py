@@ -40,20 +40,20 @@ if st.button("Click here to make Ronaldo Highlights"):
             for sv in split_vids:
                 results = model.track(source=sv, persist=True, classes=1,
                           conf=0.7, tracker="bytetrack.yaml", save=False, show=False,
-                          verbose=False, save_txt=False)
+                          verbose=False, save_txt=False) #you can play around with the conf (confidence) value
                 results = filter_vid(results,fps)
                 create_vid(results, dest_path, x, fps)
                 x = x+1
-            concatenate_videos(dest_path,"./finalVidYo.mp4")
+            concatenate_videos(dest_path,"./finalVid.mp4")
             
-            t_video_file = open("./final.mp4", 'rb')
+            t_video_file = open("./finalVid.mp4", 'rb')
             t_video_bytes = t_video_file.read()
             st.video(t_video_bytes)
-            with open("./final.mp4", "rb") as file:
+            with open("./finalVid.mp4", "rb") as file:
                 btn = st.download_button(
                         label="Download video",
                         data=file,
-                        file_name="tempFinal.mp4",
+                        file_name="Final.mp4",
                         mime="video/mp4"
                       )
   
