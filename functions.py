@@ -166,14 +166,14 @@ def final_vid(dest_path):
     video = concatenate_videoclips(highVids)
     video.write_videofile("./final.mp4", codec="libx264")
     
-def concatenate_videos(dest_path, new_video_path):
+def concatenate_videos(dest_path, fps, new_video_path):
     highVids = get_files(dest_path)
     #li = sort_list(li)
     for i in range(len(highVids)):
         highVids[i] = './'+str(highVids[i])
     highVids.sort()
     size = (720, 1280)
-    video = cv2.VideoWriter(new_video_path, cv2.VideoWriter_fourcc(*"MPEG"), 30, (size[1],size[0]))
+    video = cv2.VideoWriter(new_video_path, cv2.VideoWriter_fourcc(*"MPEG"), fps, (size[1],size[0]))
 
     for v in range(len(highVids)):
         curr_v = cv2.VideoCapture(highVids[v])
