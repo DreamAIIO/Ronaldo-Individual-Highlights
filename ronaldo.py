@@ -44,13 +44,14 @@ if st.button("Click here to make Ronaldo Highlights"):
             split_vids = sort_list(split_vids)
             x=0
             for sv in split_vids:
+                #you can play around with the conf (confidence) value
                 results = model.track(source=sv, persist=True, classes=1,
-                          conf=0.7, tracker="bytetrack.yaml", save=False, show=False,
-                          verbose=False, save_txt=False) #you can play around with the conf (confidence) value
+                          conf=0.65, tracker="bytetrack.yaml", save=False, show=False,
+                          verbose=False, save_txt=False) 
                 results = filter_vid(results,fps)
                 create_vid(results, HIGH_VIDS_PATH, x, fps)
                 x = x+1
-            concatenate_videos(HIGH_VIDS_PATH,"./finalVid.mp4")
+            concatenate_videos(HIGH_VIDS_PATH, fps, "./finalVid.mp4")
             
             t_video_file = open("./finalVid.mp4", 'rb')
             t_video_bytes = t_video_file.read()
