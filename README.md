@@ -6,7 +6,7 @@ Youtubers dedicated to sharing individual highlights of football maestros like M
 
 We curated a labelled dataset through [**RoboFlow**](https://roboflow.com/). It can be downloaded [**here**](https://universe.roboflow.com/dreamai/ronaldo-detection/dataset/3)
 
-## Download this repository
+## Clone this repository
 
 ```
 git clone https://github.com/RafayF1/Ronaldo-Individual-Highlights.git
