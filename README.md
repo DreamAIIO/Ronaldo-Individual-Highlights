@@ -9,7 +9,7 @@ We curated a labelled dataset through [**RoboFlow**](https://roboflow.com/). It 
 ## Clone this repository
 
 ```
-git clone https://github.com/RafayF1/Ronaldo-Individual-Highlights.git
+https://github.com/DreamAIIO/Ronaldo-Individual-Highlights.git
 ```
 
 ## Launch the StreamLit Application
